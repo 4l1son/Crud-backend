@@ -1,5 +1,5 @@
 ## Crud MKTP - Cadastro de produtos
-O projeto se baseia em uma API Rest que fornece os métodos (GET,POST,PUT,DELETE) para controle e cadastro de produtos. O front-end que consome esta api se encontra no seguinte repositório: https://github.com/4l1son/Crud-laravel-MKTP
+O projeto se baseia em uma API Rest que fornece os métodos (GET,POST,PUT,DELETE) para controle e cadastro de produtos. O front-end que consome esta api se encontra no seguinte repositório: https://github.com/4l1son/Crud-laravel-MKTP-front
 <h2>Tecnologias utilizadas</h2>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
