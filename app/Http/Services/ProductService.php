@@ -2,20 +2,18 @@
 
 namespace App\Http\Services;
 
-
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class ProductService
 {
-
-
     protected $product;
-    public function __construct() {
+
+    public function __construct()
+    {
         $this->product = new Product();
     }
-  
+
     public function index()
     {
         return $this->product->all();
@@ -28,20 +26,30 @@ class ProductService
 
     public function show($id)
     {
-       $product = $this->product->find($id);
+        return $this->product->find($id);
     }
 
-  
     public function update(Request $request, $id)
     {
-       $product = $this->product->find($id);
-       $product->update($request->all());
-       return $product;
+        $product = $this->product->find($id);
+
+        if ($product) {
+            $product->update($request->all());
+            return $product;
+        }
+
+        return response()->json(['message' => 'Produto não encontrado'], 404);
     }
 
     public function destroy($id)
     {
         $product = Product::find($id);
-        return $product->delete(); 
-       }
+
+        if ($product) {
+            $product->delete();
+            return response()->json(['message' => 'Produto excluído com sucesso']);
+        }
+
+        return response()->json(['message' => 'Produto não encontrado'], 404);
+    }
 }
